@@ -17,14 +17,14 @@
       <header class="app__header">
         <h1>Rock, paper, scissors</h1>
       </header>
-      <div class="app__container">
+      <div class="app__container" id="game">
         <!-- visible before starting the first round -->
-        <div class="game game--empty" id="game-empty">
+        <div class="game game--empty" ref="empty">
           Press a button below to start the game.
         </div>
 
         <!-- showing the windup animation -->
-        <div class="game game--windup hidden" id="game-windup">
+        <div class="game game--windup hidden" ref="windup">
           <div class="flex flex--center">
             <div ref="animate">
               <div class="hand hand--default"></div>
@@ -37,51 +37,24 @@
         </div>
 
         <!-- showing the game result -->
-        <div class="game game--result flex--column hidden" id="game-result">
-          <div class="flex flex--center">
-            <div><div class="hand" ref="left"></div></div>
-            <div class="game__vs">vs</div>
-            <div><div class="hand hand--flipped" ref="right"></div></div>
-          </div>
-          <div class="flex flex--column">
-            <h4 class="game__result game__result--win">You won!</h4>
-            <h4 class="game__result">Tie!</h4>
-            <h4 class="game__result game__result--loss">You lost!</h4>
-            <p>Press a button below to start another game.</p>
-          </div>
+        <div class="game game--result hidden" ref="result">
+          <div><div ref="left"></div></div>
+          <div class="game__vs">vs</div>
+          <div><div ref="right"></div></div>
         </div>
 
         <!-- showing the current score -->
-        <div class="score" id="score">
+        <div class="score" ref="score">
           <div class="score__wins" ref="wins">0</div>
           <div class="score__ties" ref="ties">0</div>
           <div class="score__losses" ref="losses">0</div>
         </div>
 
         <!-- history of the last games in the current session -->
-        <div class="history" id="history">
-          <div class="history__item history__item--win">
-            Tie <span class="hand hand--default"></span> vs
-            <span class="hand hand--flipped hand--default"></span>
-          </div>
-          <div class="history__item">
-            Tie <span class="hand hand--default"></span> vs
-            <span class="hand hand--flipped hand--default"></span>
-          </div>
-        </div>
+        <div class="history" ref="history"></div>
 
         <!-- action buttons for playing the games -->
-        <div class="actions" id="actions">
-          <button class="actions__button">
-            <span class="hand hand--computer"></span>
-          </button>
-          <button class="actions__button">
-            <span class="hand hand--paper"></span>
-          </button>
-          <button class="actions__button">
-            <span class="hand hand--rock"></span>
-          </button>
-        </div>
+        <div class="actions" ref="actions"></div>
       </div>
     </div>
     <!-- built files will be auto injected -->
