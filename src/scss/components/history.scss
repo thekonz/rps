@@ -1,0 +1,18 @@
+.history {
+  @extend .flex, .flex--column;
+  margin: 1rem 0;
+  height: 100px;
+  max-height: min(100px, 10vh);
+  overflow-y: auto;
+  font-size: 0.8rem;
+  &__item {
+    align-self: center;
+    max-width: 100%;
+    &--win {
+      color: $green;
+    }
+    &--loss {
+      color: $red;
+    }
+  }
+}

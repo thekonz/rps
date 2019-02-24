@@ -1,0 +1,14 @@
+.score {
+  @extend .flex, .flex--center;
+  font-size: 2rem;
+  font-weight: bold;
+  > div:not(:last-child) {
+    margin-right: 0.4em;
+  }
+  &__wins {
+    color: $green;
+  }
+  &__losses {
+    color: $red;
+  }
+}

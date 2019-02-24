@@ -1,0 +1,9 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  &__header {
+    text-align: center;
+    color: $light-blue;
+    background: $dark-blue;
+  }
+}

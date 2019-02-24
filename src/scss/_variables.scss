@@ -1,0 +1,6 @@
+$dark-blue: #2c3e50;
+$orange: #e74c3c;
+$green: darken(adjust-hue($orange, 140deg), 15%);
+$red: adjust-hue($orange, -20deg);
+$pseudo-white: #ecf0f1;
+$light-blue: #3498db;

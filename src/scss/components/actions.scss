@@ -1,0 +1,25 @@
+.actions {
+  @extend .flex, .flex--center;
+  background: $dark-blue;
+  padding: 0.6rem 1rem;
+
+  &__button {
+    @extend .flex, .flex--center;
+    font-size: 1.3rem;
+    height: 3em;
+    width: 3em;
+    &:not(:last-child) {
+      margin-right: 0.4em;
+    }
+
+    border: none;
+    border-radius: 100%;
+
+    background: $orange;
+    color: $pseudo-white;
+    cursor: pointer;
+    &:hover {
+      background: lighten($orange, 5%);
+    }
+  }
+}

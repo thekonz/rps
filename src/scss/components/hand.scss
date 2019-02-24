@@ -1,0 +1,51 @@
+.hand {
+  display: inline-block;
+  margin: 0.5em;
+  @extend %fa-icon;
+  @extend .far;
+  &--flipped {
+    transform: scaleX(-1);
+  }
+
+  &--default:before,
+  &--rock:before {
+    content: fa-content($fa-var-hand-rock);
+  }
+  &--paper:before {
+    content: fa-content($fa-var-hand-paper);
+  }
+  &--scissors:before {
+    content: fa-content($fa-var-hand-scissors);
+  }
+  &--computer {
+    // the dice are a solid icon
+    @extend .fas;
+    &:before {
+      content: fa-content($fa-var-dice);
+    }
+  }
+
+  // rotation fix for fontawesome.
+  // ideally, an icon set has the icons
+  // rotated nicely already
+  $hand-class: #{&};
+  &--default,
+  &--rock,
+  &--paper {
+    // some hands are pointing up by default,
+    // so we need to rotate them...
+    transform: rotate(90deg);
+    // ...and also apply the flipped state again
+    &#{$hand-class}--flipped {
+      transform: rotate(-90deg) scaleX(-1);
+    }
+  }
+
+  // and scissors are just flipped by default
+  &--scissors {
+    transform: scaleX(-1);
+    &#{$hand-class}--flipped {
+      transform: none;
+    }
+  }
+}

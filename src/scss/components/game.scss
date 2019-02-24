@@ -1,0 +1,22 @@
+.game {
+  @extend .flex, .flex--center;
+
+  height: 400px;
+  max-height: 40vh;
+  font-size: 2rem;
+  text-align: center;
+
+  &__vs {
+    font-weight: bold;
+  }
+
+  &__result {
+    text-align: center;
+    &--win {
+      color: $green;
+    }
+    &--loss {
+      color: $red;
+    }
+  }
+}
