@@ -3,7 +3,7 @@ import Renderer from "@/renderer";
 
 export default class {
   /**
-   * @param  {DOMElement}
+   * @param  {DOMElement} element
    */
   constructor(element) {
     this._hands = [];
@@ -21,7 +21,7 @@ export default class {
   }
 
   /**
-   * @param {Hand[]}
+   * @param {Hand[]} hands
    */
   setHands(hands) {
     this._hands = hands;
@@ -32,6 +32,9 @@ export default class {
     return this.playRound(this.getRandomHand());
   }
 
+  /**
+   * @param  {Hand} hand
+   */
   async playRound(hand) {
     if (this._roundInProgress) {
       return;
@@ -43,6 +46,10 @@ export default class {
     this._roundInProgress = false;
   }
 
+  /**
+   * @param  {Hand} hand
+   * @return {Object}  The player's Hand, the enemy's Hand and the result (win, loss or tie)
+   */
   _fight(hand) {
     const enemyHand = this.getRandomHand();
     let result;
